@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listView"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="?selectableItemBackground"
+    android:foreground="?android:selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/main_img_pet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/circle_decorator"
+        android:scaleType="center"
+        android:src="@drawable/ic_pets" />
+
+    <TextView
+        android:id="@+id/main_title_pet"
+        style="@style/Text_Title_Dark"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@+id/main_img_pet"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        tools:text="Category dfjkgdjksg djkfgdsfkj dfsgjksdfg dfjgkdsfg " />
+
+    <View
+        style="@style/AppTheme.HorizontalViewDivider"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp" />
+</RelativeLayout>
