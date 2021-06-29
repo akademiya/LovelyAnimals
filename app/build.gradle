@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 
 android {
@@ -64,7 +65,7 @@ dependencies {
     implementation 'javax.inject:javax.inject:1'
 
 
-    // FIREBASE
+    // FIREBASE old project
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-core:19.0.0'
     implementation 'com.google.firebase:firebase-database:20.0.0'
@@ -75,7 +76,17 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
-//    implementation 'com.google.android.gms:play-services:12.0.1'
+
+
+    // FIREBASE new
+    implementation platform('com.google.firebase:firebase-bom:28.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation platform('com.google.firebase:firebase-bom:28.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+
+
 
 
 }

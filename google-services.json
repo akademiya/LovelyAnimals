@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "6228605948",
+    "project_id": "lovely-animals-9fd44",
+    "storage_bucket": "lovely-animals-9fd44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6228605948:android:08d9c91077a138ea6f5079",
+        "android_client_info": {
+          "package_name": "com.gvd.lovelyanimals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6228605948-cfnrs1ckqt02n1r41d8fqaau5cpd7qg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9dojUYVUN7T1s5sRI-dMSVsdOlpgH3A8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6228605948-cfnrs1ckqt02n1r41d8fqaau5cpd7qg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
