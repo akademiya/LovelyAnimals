@@ -66,8 +66,8 @@ abstract class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         when (id) {
             R.id.nav_home -> startActivity(Intent(this, MainActivity::class.java))
             R.id.nav_shop -> startActivity(Intent(this, ShopActivity::class.java))
-            R.id.nav_fb -> startActivity(Intent(openFacebookIntent(this)))
-            R.id.nav_ins -> TODO()
+            R.id.nav_fb -> startActivity(Intent(openFacebook(this)))
+            R.id.nav_ins -> startActivity(Intent(openInstagram(this)))
             R.id.nav_share -> {
                 val sharingIntent = Intent(Intent.ACTION_SEND)
                 val shareBody = getString(R.string.share_body)
@@ -94,11 +94,21 @@ abstract class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         return true
     }
 
-    open fun openFacebookIntent(context: Context): Intent? {
+    open fun openFacebook(context: Context): Intent? {
         val url = "https://www.facebook.com/LovelyHomeAnimals"
         return try {
             context.packageManager.getPackageInfo("com.facebook.katana", 0)
             Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=$url"))
+        } catch (e: Exception) {
+            Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        }
+    }
+
+    open fun openInstagram(context: Context): Intent? {
+        val url = "https://www.instagram.com/lovely_home_animals/"
+        return try {
+            context.packageManager.getPackageInfo("com.instagram.android", 0)
+            Intent(Intent.ACTION_VIEW, Uri.parse(url))
         } catch (e: Exception) {
             Intent(Intent.ACTION_VIEW, Uri.parse(url))
         }
