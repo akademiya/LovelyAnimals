@@ -11,4 +11,8 @@ class MainPresenter(mainView: MainActivity, applicationComponent: Application) :
 
     override fun onUnbindView() {}
 
+    fun clickByTitle7(counter: Float) {
+        view?.visibilityFabButton(counter.equals(7F))
+    }
+
 }
