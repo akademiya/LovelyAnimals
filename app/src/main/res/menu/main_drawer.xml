@@ -8,17 +8,17 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_shop"
-            android:icon="@drawable/shop"
-            android:title="@string/menu_shop" />
+<!--        <item-->
+<!--            android:id="@+id/nav_shop"-->
+<!--            android:icon="@drawable/shop"-->
+<!--            android:title="@string/menu_shop" />-->
         <item
             android:id="@+id/nav_fb"
             android:icon="@drawable/fb"
             android:title="@string/menu_fb" />
         <item
             android:id="@+id/nav_ins"
-            android:icon="@drawable/shop"
+            android:icon="@drawable/ins"
             android:title="@string/menu_ins" />
     </group>
 

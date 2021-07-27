@@ -17,4 +17,14 @@
 
     // INVALID VALUE
     <string name="no_internet">No internet connection</string>
+
+    <string name="new_post_title">Short title</string>
+    <string name="new_post_description">Description</string>
+    <string name="add_new_post">Add new post</string>
+    <string name="add_post">Add post</string>
+    <string name="cancel">Cancel</string>
+    <string name="something_wrong">Not write. Check your enter data</string>
+    <string name="task_cancelled">Task canceled</string>
+
+    <string name="select_photo">Select photo</string>
 </resources>

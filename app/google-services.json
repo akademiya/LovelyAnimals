@@ -1,33 +1,71 @@
 {
   "project_info": {
-    "project_number": "6228605948",
-    "project_id": "lovely-animals-9fd44",
-    "storage_bucket": "lovely-animals-9fd44.appspot.com"
+    "project_number": "877946751644",
+    "firebase_url": "https://lovely-animal-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "lovely-animal",
+    "storage_bucket": "lovely-animal.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:6228605948:android:08d9c91077a138ea6f5079",
+        "mobilesdk_app_id": "1:877946751644:android:0fd13dd4f9004bdee2fb59",
         "android_client_info": {
-          "package_name": "com.gvd.lovelyanimals"
+          "package_name": "com.gvd.lovelyanimal"
         }
       },
       "oauth_client": [
         {
-          "client_id": "6228605948-cfnrs1ckqt02n1r41d8fqaau5cpd7qg8.apps.googleusercontent.com",
+          "client_id": "877946751644-rt23gdeamffp7bqac39t48982fdo1hi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gvd.lovelyanimal",
+            "certificate_hash": "686b73d134e8159bb4e3767e56c99415451a5665"
+          }
+        },
+        {
+          "client_id": "877946751644-pfv38ues82j3uhgnd4ho2lj394hqnnv7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9dojUYVUN7T1s5sRI-dMSVsdOlpgH3A8"
+          "current_key": "AIzaSyCRlmIjay6ZXd-5_zrHnMw6_9YdNO6oxpw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "6228605948-cfnrs1ckqt02n1r41d8fqaau5cpd7qg8.apps.googleusercontent.com",
+              "client_id": "877946751644-pfv38ues82j3uhgnd4ho2lj394hqnnv7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877946751644:android:aa5c47492d06ed98e2fb59",
+        "android_client_info": {
+          "package_name": "com.gvd.lovelyanimal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877946751644-pfv38ues82j3uhgnd4ho2lj394hqnnv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRlmIjay6ZXd-5_zrHnMw6_9YdNO6oxpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877946751644-pfv38ues82j3uhgnd4ho2lj394hqnnv7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
