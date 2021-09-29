@@ -5,5 +5,5 @@ import android.content.Intent
 interface IMainActivity {
     fun visibilityFabButton(isVisible: Boolean)
     fun showDialogToCreateNewPost()
-    fun onSelectImageFromGallery(intent: Intent)
+    fun onSelectImageFromGallery(intent: Intent, flag: Boolean)
 }

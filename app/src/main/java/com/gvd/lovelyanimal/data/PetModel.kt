@@ -1,5 +1,7 @@
 package com.gvd.lovelyanimal.data
 
+import android.net.Uri
+
 class PetModel {
     var pid: String? = null
     var petPhoto: String? = null
@@ -17,6 +19,11 @@ class PetModel {
         this.petTitle = petTitle
         this.petDescription = petDescription
         this.petPhoto = pet_photo
+    }
+
+    constructor(petTitle: String, petDescription: String) {
+        this.petTitle = petTitle
+        this.petDescription = petDescription
     }
 
     constructor() {}

@@ -21,6 +21,38 @@
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
+        android:id="@+id/start_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/start_pet_img"
+            android:alpha=".2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/day_lapu" />
+
+        <ImageView
+            android:id="@+id/start"
+            android:alpha=".2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_pets" />
+
+        <TextView
+            android:id="@+id/take_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="84dp"
+            android:text="Дай пять" />
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/activity_to_do"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

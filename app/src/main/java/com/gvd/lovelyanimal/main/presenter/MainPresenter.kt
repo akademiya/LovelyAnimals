@@ -9,6 +9,9 @@ import com.gvd.lovelyanimal.main.view.MainActivity
 
 class MainPresenter(mainView: MainActivity, applicationComponent: Application) : BasePresenter<MainActivity>(mainView) {
     init { (applicationComponent as AndroidApplication).applicationComponent.inject(this) }
+
+    private var counterClickSelectImg = 0F
+
     override fun onBindView() {}
 
     override fun onUnbindView() {}
@@ -22,10 +25,16 @@ class MainPresenter(mainView: MainActivity, applicationComponent: Application) :
     }
 
     fun onSelectImage() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        var firstSelectImgFlag = false
+        counterClickSelectImg++
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         intent.type = "image/*"
-        intent.putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/jpeg", "image/png", "image/jpg"))
-        view?.onSelectImageFromGallery(intent)
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.putExtra(Intent.ACTION_SEND_MULTIPLE, arrayOf("image/jpeg", "image/png", "image/jpg"))
+        firstSelectImgFlag = counterClickSelectImg == 1F
+        view?.onSelectImageFromGallery(intent, firstSelectImgFlag)
     }
 
 }

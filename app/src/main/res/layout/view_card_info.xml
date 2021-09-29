@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:id="@+id/info_toolbar_title"
+            style="@style/Toolbar.TitleText"
+            android:text="@string/info_toolbar_title" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/info_back_img"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back" />
+
+                <ImageSwitcher
+                    android:id="@+id/info_img_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_centerInParent="true" />
+
+                <ImageView
+                    android:id="@+id/info_next_img"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_next" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/info_title"
+                style="@style/Text_Title_Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                tools:text="short title" />
+
+            <TextView
+                android:id="@+id/info_description"
+                style="@style/Text_Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                tools:text="to much loooong text dsfkgnsdfkn dfkngsdkf;n dfkgnkgn dknfgd ;kfndfk;jbn jkd;snfjk;n djk;fndfjkngd
+        jkf ndkfj;ng jkdfsnkdjfng kjdnfgk ndklfng dfgdfg" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

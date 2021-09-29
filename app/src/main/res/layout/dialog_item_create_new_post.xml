@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:paddingTop="8dp">
 
-    <ImageView
+    <ImageSwitcher
         android:id="@+id/img_pet"
         android:layout_width="105dp"
         android:layout_height="105dp"
@@ -18,8 +18,32 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/img_pet"
+        android:background="@color/text_disabled_dark"
         android:drawableStart="@drawable/ic_take_photo"
         android:text="@string/select_photo" />
+
+    <!--click here to view previous image-->
+    <ImageView
+        android:src="@drawable/ic_back_white"
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/img_pet"
+        android:layout_below="@+id/btn_select_photo" />
+
+    <!--click here to view next image-->
+    <ImageView
+        android:src="@drawable/ic_next"
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/btn_select_photo"
+        android:layout_toEndOf="@+id/btn_back"
+        android:layout_marginStart="16dp" />
 
     <EditText
         android:id="@+id/create_post_title"

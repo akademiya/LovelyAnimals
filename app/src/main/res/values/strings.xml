@@ -27,4 +27,8 @@
     <string name="task_cancelled">Task canceled</string>
 
     <string name="select_photo">Select photo</string>
+    <string name="back_photo">back</string>
+    <string name="next_photo">next</string>
+
+    <string name="info_toolbar_title">Interesting fact</string>
 </resources>

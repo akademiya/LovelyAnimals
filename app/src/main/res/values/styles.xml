@@ -42,11 +42,13 @@
 
     <style name="TextStyle.Heading" parent="TextStyle">
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_title_dark</item>
     </style>
 
     <style name="Text_Title_Dark" parent="TextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_title_size</item>
         <item name="android:textColor">@color/text_title_dark</item>
     </style>
@@ -54,7 +56,7 @@
     <style name="Text_Description" parent="TextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/text_title_size</item>
+        <item name="android:textSize">@dimen/text_description_size</item>
     </style>
 
     <!--Divider-->

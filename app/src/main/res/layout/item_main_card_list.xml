@@ -19,16 +19,17 @@
         android:src="@drawable/ic_pets" />
 
     <TextView
-        android:id="@+id/main_title_pet"
-        style="@style/Text_Title_Dark"
+        android:id="@+id/short_title"
+        style="@style/TextStyle.Heading"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/main_img_pet"
         android:ellipsize="end"
+        android:maxEms="200"
         android:gravity="center_vertical"
-        tools:text="Category dfjkgdjksg djkfgdsfkj dfsgjksdfg dfjgkdsfg " />
+        tools:text="Category kdsfg " />
 
     <View
         style="@style/AppTheme.HorizontalViewDivider"
