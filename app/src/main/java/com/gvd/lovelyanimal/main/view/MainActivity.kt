@@ -10,6 +10,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -43,6 +44,7 @@ class MainActivity : BaseActivity(), IMainActivity {
     private lateinit var ref: DatabaseReference
     private lateinit var listUri: ArrayList<Uri>
     private var position = 0
+    private var fabIsVisible = false
 
 
 
@@ -84,14 +86,25 @@ class MainActivity : BaseActivity(), IMainActivity {
                             val pet = postSnapshot.getValue(PetModel::class.java)
                             petList.add(pet!!)
                         }
-                    main_pet_list.adapter = MainAdapter(this@MainActivity, petList) { model ->
-                        val intent = Intent(this@MainActivity, PetInfoView::class.java)
-                        intent.putExtra("petID", model.pid)
-                        intent.putExtra("petTitle", model.petTitle)
-                        intent.putExtra("petDescription", model.petDescription)
-                        intent.putExtra("photo", model.petPhoto)
-                        startActivity(intent)
-                    }
+                        main_pet_list.adapter = MainAdapter(
+                            this@MainActivity,
+                            petList,
+                            { model ->
+                                val intent = Intent(this@MainActivity, PetInfoView::class.java)
+                                intent.putExtra("petTitle", model.petTitle)
+                                intent.putExtra("petDescription", model.petDescription)
+                                intent.putExtra("photo", model.petPhoto)
+                                startActivity(intent)
+                            },
+                            { petID ->
+                                ref.child(petID).removeValue().addOnSuccessListener {
+                                    Toast.makeText(this@MainActivity, "Item $petID success deleted", Toast.LENGTH_SHORT).show()
+                                }.addOnFailureListener {
+                                    Toast.makeText(this@MainActivity, "Failed", Toast.LENGTH_SHORT).show()
+                                }
+                            },
+                            fabIsVisible
+                        )
                     }
                 }
 
@@ -115,9 +128,13 @@ class MainActivity : BaseActivity(), IMainActivity {
 
 
     override fun visibilityFabButton(isVisible: Boolean) {
-        if (isVisible) {
+        fabIsVisible = if (isVisible) {
             fab.show()
-        } else fab.hide()
+            true
+        } else {
+            fab.hide()
+            false
+        }
     }
 
     override fun showDialogToCreateNewPost() {
@@ -163,6 +180,7 @@ class MainActivity : BaseActivity(), IMainActivity {
                 Toast.makeText(this, R.string.something_wrong, Toast.LENGTH_SHORT).show()
             } else {
                 val petID = ref.push().key
+                PetModel(petID)
                 val petDB = PetModel(title, description)
                 petID?.let {
                     ref.child(it)
@@ -177,7 +195,7 @@ class MainActivity : BaseActivity(), IMainActivity {
 
                 val formatter = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
                 val fileName = formatter.format(Date())
-                val imageFolder = FirebaseStorage.getInstance().getReference("images/$fileName")
+                val imageFolder = FirebaseStorage.getInstance().getReference("image/$fileName")
 //                storageReference.putFile(listUri).addOnSuccessListener {
                     
 //                }
@@ -226,62 +244,16 @@ class MainActivity : BaseActivity(), IMainActivity {
                 iv.setImageURI(listUri[0])
                 position = 0
             } else {
-                imagePath = data.data!!.path
+//                val imageUri: Uri = data.clipData!!.getItemAt(0).uri
+//                imagePath = data.data!!.path
 //                listUri.add(imageUri)
-                iv.setImageURI(listUri[0])
-                position = 0
+                iv.setImageDrawable(resources.getDrawable(R.drawable.ic_pets))
+//                position = 0
             }
 
         }
 
     }
 
-
-    private fun getPathFromURI(uri: Uri) {
-        var path: String = uri.path!!
-
-        val databaseUri: Uri
-        val selection: String?
-        val selectionArgs: Array<String>?
-        if (path.contains("/document/image:")) { // files selected from "Documents"
-            databaseUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-            selection = "_id=?"
-            selectionArgs = arrayOf(DocumentsContract.getDocumentId(uri).split(":")[1])
-        } else { // files selected from all other sources, especially on Samsung devices
-            databaseUri = uri
-            selection = null
-            selectionArgs = null
-        }
-        try {
-            val projection = arrayOf(
-                MediaStore.Images.Media.DATA,
-                MediaStore.Images.Media._ID,
-                MediaStore.Images.Media.ORIENTATION,
-                MediaStore.Images.Media.DATE_TAKEN
-            )
-            val cursor =
-                contentResolver.query(databaseUri, projection, selection, selectionArgs, null)
-            if (cursor!!.moveToFirst()) {
-                val columnIndex = cursor.getColumnIndex(projection[0])
-                imagePath = cursor.getString(columnIndex)
-                imagesPathList.add(imagePath!!)
-            }
-            cursor.close()
-        } catch (e: Exception) {
-        }
-    }
-
-    /** START SET IMAGE */
-//    private fun updateImageRepresentation(src: String) {
-//        ImageUtils.removePetPhoto(petImgPath) // FIXME
-//        btn_remove_photo.visibility = View.GONE
-//        btn_select_photo.isEnabled = true
-//        GlideApp.with(baseContext)
-//            .load(src)
-//            .fallback(resources.getDrawable(R.drawable.ic_nophoto))
-//            .error(resources.getDrawable(R.drawable.ic_nophoto))
-//            .centerCrop()
-//            .into(img_pet)
-//    }
 
 }

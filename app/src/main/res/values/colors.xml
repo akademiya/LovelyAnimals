@@ -9,6 +9,7 @@
     <color name="divider_color">#1E000000</color> <!--12% of black-->
     <color name="text_title_dark">#DF000000</color> <!--87% of black-->
     <color name="green_fab">#4CAF50</color> <!--Green 500-->
+    <color name="red">#ED3636</color>
 
     <color name="text_secondary_dark">#8B000000</color> <!--54% of black-->
     <color name="text_disabled_dark">#61000000</color> <!--38% of black-->

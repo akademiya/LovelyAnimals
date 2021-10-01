@@ -26,5 +26,9 @@ class PetModel {
         this.petDescription = petDescription
     }
 
+    constructor(pid: String?) {
+        this.pid = pid
+    }
+
     constructor() {}
 }

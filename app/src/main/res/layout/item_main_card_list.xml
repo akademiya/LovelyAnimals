@@ -21,15 +21,25 @@
     <TextView
         android:id="@+id/short_title"
         style="@style/TextStyle.Heading"
-        android:layout_height="match_parent"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/main_img_pet"
         android:ellipsize="end"
-        android:maxEms="200"
         android:gravity="center_vertical"
+        android:maxEms="200"
         tools:text="Category kdsfg " />
+
+    <ImageView
+        android:id="@+id/delete_item"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_delete"
+        android:visibility="gone" />
 
     <View
         style="@style/AppTheme.HorizontalViewDivider"
