@@ -66,14 +66,14 @@ class MainActivity : BaseActivity(), IMainActivity {
         main_pet_list.setHasFixedSize(true)
 
         start_pet_img.animate().apply {
-            duration = 2000
+            duration = 1000
             alpha(1f)
-            rotationYBy(540f)
+            rotationYBy(360f)
         }.start()
         start.animate().apply {
-            duration = 2000
+            duration = 1000
             alpha(1f)
-            rotationYBy(540f)
+            rotationYBy(360f)
         }.start()
 
         start.setOnClickListener {
