@@ -7,7 +7,6 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.3"
 
     kapt {
         generateStubs = true
@@ -39,6 +38,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.gvd.lovelyanimal'
 }
 
 dependencies {
